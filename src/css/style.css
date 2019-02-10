@@ -71,25 +71,6 @@ h4 {
     vertical-align: middle;
 }
 
-#submit {
-  position: absolute;
-  bottom: 0;
-  width: 50%;
-  font-family: 'Roboto', sans-serif;
-  height: 100px;
-  font-weight: 700;
-  font-size: 23px;
-  border: none;
-  text-transform: uppercase;
-  background-color: #BDBDBD;
-  color: #6E6E6E;
-}
-
-#submit:active {
-  background-color: #000;
-}
-
-
 #form-card {
   grid-column-start: 2;
   grid-row: 2;
@@ -116,6 +97,13 @@ form {
   max-width: 700px;
   box-sizing: border-box;
 }
+
+@media (max-height: 900px) {
+  form label {
+    font-size: 14px;
+  }
+}
+
 
 form input {
   width: 100%;
@@ -144,7 +132,7 @@ form label {
 }
 
 #save:hover {
-  background-color: #000;
+  background-color: #41AD6C;
 
 }
 
@@ -164,4 +152,8 @@ form label {
   color: #6C6969;
   width: 125px;
   text-transform: uppercase;
+}
+
+.nav:hover {
+  background-color: #E8E7E7;
 }

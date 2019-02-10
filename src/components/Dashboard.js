@@ -1,18 +1,64 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import '../css/style.css';
 import graphic from '../img/graphic.png';
 import DashboardCard from './DashboardCard';
 
+const SubmitButton = styled.button`
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  font-family: 'Roboto', sans-serif;
+  height: 100px;
+  font-weight: 700;
+  font-size: 23px;
+  border: none;
+  text-transform: uppercase;
+  background-color: ${props => props.submittable ? '#4BCF7F' : '#BDBDBD'};
+  color: #EEECEC;
+
+  &:hover {
+    background-color: ${props => props.submittable ? '#41AD6C' : '#ADADAD'};
+  }
+`;
+
 class Dashboard extends Component {
+    state = {
+        submittable: false,
+    }
+
     handleSubmit = (event) => {
         // The user's data is stored in the state
         // If there were a server, I would make a POST request here
         // That would look something like axios.post("/dashboard", this.state)
-        console.log("submitted!");
-        window.location.reload();
+        if (this.state.submittable) {
+            alert("Submitted!");
+            window.location.reload();
+        }
+        else {
+            alert("Please complete each question set before submitting!");
+        }
+    }
+
+    componentDidMount = () => {
+        const submittable  = this.canSubmit();
+        this.setState( {
+            submittable,
+        })
+    }
+
+    canSubmit = () => {
+        const { questionSets, formData } = this.props;
+        let submittable = false;
+
+        if (questionSets && formData) {
+            submittable = Object.keys(formData).length === questionSets.length;
+        }
+        return submittable;
     }
 
     render() {
+
         const { questionSets } = this.props;
         return (
             <div id="wrapper">
@@ -31,7 +77,7 @@ class Dashboard extends Component {
                                 <h2>Loading...</h2>
                             )}
                     </div>
-                    <button onClick={this.handleSubmit} id="submit" type="submit">Submit</button>
+                    <SubmitButton submittable={this.state.submittable} onClick={this.handleSubmit} id="submit" type="submit">Submit</SubmitButton>
                 </div>
             </div>
         );

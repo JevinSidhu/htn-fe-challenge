@@ -12,6 +12,11 @@ const Input = styled.input`
     border-color: ${props => props.set === "generalInfo" ? '#FEF4E0' : '#FDD4D9'};
     border-radius: 6px;
     margin-bottom: 20px;
+
+    @media (max-height: 900px) {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
 `;
 
 class Question extends Component {
