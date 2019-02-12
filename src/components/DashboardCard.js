@@ -13,7 +13,11 @@ const Card = styled.div`
     border-radius: 12px;
     padding: 20px 20px;
     margin-bottom: 25px;
-    box-shadow: 0 1px 3px hsl(0, 0%, 0%, 0.2)
+    box-shadow: 0 1px 3px hsl(0, 0%, 0%, 0.2);
+
+    @media (max-height: 630px) {
+        padding: 10px 20px;
+    }
 `;
 
 const Input = styled.input`
@@ -29,6 +33,7 @@ const Input = styled.input`
     &:hover {
         background-color: #EEECEC;
     }
+
 `;
 
 class DashboardCard extends Component {

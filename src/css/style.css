@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
-
 html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -51,7 +50,7 @@ h4 {
 }
 
 #panel-header {
-  padding-top: 175px;
+  padding-top: 145px;
   padding-left: 50px;
 }
 
@@ -88,7 +87,7 @@ h4 {
   border-bottom: 2px solid #e8e8e8;
   padding-bottom: 5px;
   justify-self: center;
-  align-self: center;
+  align-self: end;
 }
 
 form {
@@ -98,13 +97,6 @@ form {
   box-sizing: border-box;
 }
 
-@media (max-height: 900px) {
-  form label {
-    font-size: 14px;
-  }
-}
-
-
 form input {
   width: 100%;
   max-width: 700px;
@@ -112,6 +104,7 @@ form input {
 }
 
 form label {
+  font-size: 14px;
   display: inline-block;
   color: #959494;
   font-weight: 500;
@@ -136,24 +129,121 @@ form label {
 
 }
 
+.nav-wrapper {
+  position: absolute;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 30px;
+  width: 100px;
+  background-color: #FFF;
+  color: #6C6969;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+.nav-wrapper:hover {
+  background-color: #E8E7E7;
+}
+
 #next_set {
   right: 0;
   bottom: 0;
 }
 
-.nav {
-  font-weight: 700;
-  font-size: 15px;
-  margin: 15px;
-  text-align: center;
-  border-radius: 30px;
-  position: absolute;
-  background-color: #FFF;
-  color: #6C6969;
-  width: 125px;
-  text-transform: uppercase;
+/* Width Media Queries*/
+@media (max-width: 1050px) {
+  .nav-wrapper {
+    font-size: 12px;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+  }
+
+  .nav {
+    padding: 10px;
+  }
+
+  .nav-link {
+    justify-self: center;
+    align-self: center;
+  }
+
+  #form-card {
+      padding: 0 25px;
+      border-radius: 0;
+  }
+
+  form label {
+    font-size: 13px;
+  }
+
+  #form-card h2 {
+    font-size: 26px;
+    margin-bottom: 35px;
+  }
+
+  #save {
+    padding: 12px;
+    margin-bottom: 25px;
+  }
+
+  #form-card {
+    grid-column-start: auto;
+    grid-row: auto;
+  }
+  #panel-header {
+    padding-top: 125px;
+    padding-left: 40px;
+  }
+  #wrapper {
+    grid-template-columns: 1fr;
+}
+  #left-panel {
+    display: none;
+  }
 }
 
-.nav:hover {
-  background-color: #E8E7E7;
+@media (max-width: 505px) {
+  #panel-header {
+    padding-top: 150px;
+  }
+
+  h1.header {
+    font-size: 35px;
+  }
+
+  #card h2 {
+    font-size: 20px;
+  }
+
+  #card img {
+    width: 50px;
+  }
+}
+
+/* Height Media Queries for tiny devices (like the iPhone 4)*/
+@media (max-height: 670px) {
+  h4 {
+    font-size: 12px;
+  }
+
+  #panel-header {
+    padding-top: 75px;
+    padding-left: 20px;
+  }
+
+  h1.header {
+    font-size: 24px;
+  }
+
+  #card h2 {
+    font-size: 16px;
+  }
+
+  #card img {
+    width: 40px;
+    margin-right: 25px;
+  }
+
 }

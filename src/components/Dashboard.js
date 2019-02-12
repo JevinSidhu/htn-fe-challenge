@@ -5,21 +5,25 @@ import graphic from '../img/graphic.png';
 import DashboardCard from './DashboardCard';
 
 const SubmitButton = styled.button`
-  position: absolute;
-  bottom: 0;
-  width: 50%;
-  font-family: 'Roboto', sans-serif;
-  height: 100px;
-  font-weight: 700;
-  font-size: 23px;
-  border: none;
-  text-transform: uppercase;
-  background-color: ${props => props.submittable ? '#4BCF7F' : '#BDBDBD'};
-  color: #EEECEC;
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    height: 100px;
+    font-weight: 700;
+    font-size: 23px;
+    border: none;
+    text-transform: uppercase;
+    background-color: ${props => props.submittable ? '#4BCF7F' : '#BDBDBD'};
+    color: #EEECEC;
 
-  &:hover {
-    background-color: ${props => props.submittable ? '#41AD6C' : '#ADADAD'};
-  }
+    &:hover {
+        background-color: ${props => props.submittable ? '#41AD6C' : '#ADADAD'};
+    }
+
+    @media (max-width: 1050px) {
+        width: 100%;
+    }
 `;
 
 class Dashboard extends Component {

@@ -6,16 +6,16 @@ const Input = styled.input`
     font-weight: 500;
     font-size: 16px;
     display: block;
-    background-color: ${props => props.set === "generalInfo" ? '#FCF8F0' : '#FFECEE'};
+    background-color: ${props => props.set === "generalInfo" ? '#F9F1DF' : '#FFECEE'};
     padding: 10px 15px;
     border: 2px solid;
-    border-color: ${props => props.set === "generalInfo" ? '#FEF4E0' : '#FDD4D9'};
+    border-color: ${props => props.set === "generalInfo" ? '#FCE9C3' : '#FDD4D9'};
     border-radius: 6px;
     margin-bottom: 20px;
 
     @media (max-height: 900px) {
         padding: 5px 10px;
-        font-size: 14px;
+        font-size: 12px;
     }
 `;
 
