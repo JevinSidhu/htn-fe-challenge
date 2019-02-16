@@ -34,6 +34,7 @@ Extra functionality includes changing the "Begin" text in the button to "Edit" o
 **Things to Consider:**
 
 > What are some useful performance metrics for this application and why?
+
 Useful performance metrics include:
 1. Loading time
 2. Time spent on entire application
