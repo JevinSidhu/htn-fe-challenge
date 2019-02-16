@@ -36,8 +36,7 @@ class Dashboard extends Component {
         // If there were a server, I would make a POST request here
         // That would look something like axios.post("/dashboard", this.state)
         if (this.state.submittable) {
-            alert("Submitted!");
-            window.location.reload();
+            this.props.history.push('/success');
         }
         else {
             alert("Please complete each question set before submitting!");
@@ -45,25 +44,29 @@ class Dashboard extends Component {
     }
 
     componentDidMount = () => {
-        const submittable  = this.canSubmit();
-        this.setState( {
+        const submittable = this.canSubmit();
+        this.setState({
             submittable,
-        })
+        });
     }
 
     canSubmit = () => {
-        const { questionSets, formData } = this.props;
-        let submittable = false;
-
-        if (questionSets && formData) {
-            submittable = Object.keys(formData).length === questionSets.length;
+        const { submittable } = this.props;
+        let canSubmit = false;
+        if (Object.keys(submittable).length !== 0) {
+            canSubmit = true;
+            for (let field in submittable) {
+                if (!submittable[field]) {
+                    canSubmit = false;
+                    break;
+                }
+            }
+            return canSubmit;
         }
-        return submittable;
     }
 
     render() {
-
-        const { questionSets } = this.props;
+        const { questionSets, formData } = this.props;
         return (
             <div id="wrapper">
                 <div id="left-panel">
@@ -75,7 +78,7 @@ class Dashboard extends Component {
                         <h1 className="header"> Hacker Dashboard </h1>
                         {questionSets ? (
                             questionSets.map(questionSet => (
-                                <DashboardCard formData={this.props.formData} set={questionSet.id} label={questionSet.label} />
+                                <DashboardCard submittable={this.props.submittable} updateForSubmission={this.props.updateForSubmission} formData={formData} numOfQuestions={questionSet.questions.length} set={questionSet.id} label={questionSet.label} />
                             ))
                         ) : (
                                 <h2>Loading...</h2>

@@ -87,7 +87,9 @@ class QuestionSet extends Component {
 
         dataFromForm[`${questionSet.id}`] = {};
         questionSet.questions.forEach( (q) => {
-            dataFromForm[`${questionSet.id}`][`${q.id}`] = data.get(`${q.id}`);
+            if (data.get(`${q.id}`)) {
+                dataFromForm[`${questionSet.id}`][`${q.id}`] = data.get(`${q.id}`);
+            }
         })
 
         this.props.updateWithFormData(dataFromForm);
@@ -104,8 +106,8 @@ class QuestionSet extends Component {
                 <Link className="nav-link" to={{
                     pathname: `/`,
                 }}>
-                    <div class="nav-wrapper" id="home">
-                        <p class="nav">Home</p>
+                    <div className="nav-wrapper" id="home">
+                        <p className="nav">Home</p>
                     </div>
                 </Link>
                 <div id="form-card">
@@ -113,7 +115,7 @@ class QuestionSet extends Component {
                     <form onSubmit={this.handleSubmit}>
                         {questionSet ? (
                             questionSet.questions.map( (question) => (
-                                <Question key={question.id} formData={formData} set={questionSet.id} label={question.label} id={question.id} type={question.type} />
+                                <Question placeholder={question.placeholder} key={question.id} formData={formData} set={questionSet.id} label={question.label} id={question.id} type={question.type} />
                             ))
                         ) : (
                                 <h2>Loading...</h2>
@@ -124,8 +126,8 @@ class QuestionSet extends Component {
                 <Link className="nav-link" to={{
                     pathname: `/questions/${nextSet}`,
                 }}>
-                    <div class="nav-wrapper" id="next_set">
-                        <p class="nav">Next Set</p>
+                    <div className="nav-wrapper" id="next_set">
+                        <p className="nav">Next Set</p>
                     </div>
                 </Link>
             </BackgroundQuestions>
