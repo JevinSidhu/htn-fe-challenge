@@ -21,6 +21,10 @@ const SubmitButton = styled.button`
         background-color: ${props => props.submittable ? '#41AD6C' : '#ADADAD'};
     }
 
+    &:focus {
+        outline:0;
+    }
+
     @media (max-width: 1050px) {
         width: 100%;
     }

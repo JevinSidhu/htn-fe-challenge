@@ -166,7 +166,10 @@ form label {
 
 #save:hover {
   background-color: #41AD6C;
+}
 
+#save:focus {
+  outline:0;
 }
 
 .nav-wrapper {

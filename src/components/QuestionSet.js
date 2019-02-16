@@ -90,7 +90,7 @@ class QuestionSet extends Component {
             if (data.get(`${q.id}`)) {
                 dataFromForm[`${questionSet.id}`][`${q.id}`] = data.get(`${q.id}`);
             }
-        })
+        });
 
         this.props.updateWithFormData(dataFromForm);
 
@@ -115,11 +115,19 @@ class QuestionSet extends Component {
                     <form onSubmit={this.handleSubmit}>
                         {questionSet ? (
                             questionSet.questions.map( (question) => (
-                                <Question placeholder={question.placeholder} key={question.id} formData={formData} set={questionSet.id} label={question.label} id={question.id} type={question.type} />
-                            ))
-                        ) : (
+                                <Question
+                                    placeholder={question.placeholder}
+                                    key={question.id}
+                                    formData={formData}
+                                    set={questionSet.id}
+                                    label={question.label}
+                                    id={question.id}
+                                    type={question.type}
+                                    options={question.options}
+                                />
+                            ))) :(
                                 <h2>Loading...</h2>
-                            )}
+                        )}
                         <input id="save" onSubmit={this.handleSubmit} type="submit" value="Save" />
                     </form>
                 </div>
