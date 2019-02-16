@@ -43,15 +43,15 @@ Useful performance metrics include:
 
 If the average load time is high, this indicates your application isn't working as expected and probably needs refactoring. It may be fast on your machine, but not so quick on others.
 
-Time spent on entire application and each question set indicates how long people are thinking about your questions. Perhaps the questions are too hard. This lends itself to number of incomplete submissions. The difficulty of the questions may lead to a reduction in the number of applications submitted. The team likely wants to strike a balance with questions -- not too hard and not too easy.
+Time spent on entire application and each question set indicates how long people are thinking about your questions. Perhaps the questions are too hard. This lends itself to the number of incomplete submissions. The difficulty of the questions may lead to a great reduction in the number of applications submitted. The team likely wants to strike a balance with questions -- not too hard and not too easy.
 
-Misclicks are important because they inform the designers. Are users clicking where we expected them to click? If not, we can make changes on the fly to make the UX more enjoyable.
+Misclicks are important because they inform the designers. Are users clicking where we expected them to click? If not, we can make changes on the fly to make the UX better.
 
 > How could the api schema be extended to allow for more question types? Data validations?
 
 API schema should include a type for file attachments (resumes, GIFs, etc).
 
-Like I mentioned before, on the back-end we would need to validate and sanitize the data. There are plenty of packages on GitHub for aid the back-end team here. I've used [Express Validator](https://express-validator.github.io/docs/) in the past.
+Like I mentioned before, on the back-end we would need to validate and sanitize the data. There are plenty of packages on GitHub to aid the back-end team here. I've used [Express Validator](https://express-validator.github.io/docs/) in the past.
 
 >How easy would it be to reflect the changes above in your codebase? How could you restructure/componentize your code to make this easier?
 
@@ -59,7 +59,6 @@ It would fairly easy. I conditionally render elements based on their question ty
 1. Create a new styled component to style appropriately
 2. Create an if else to render this question type
 
-
 > Could this data be useful for building any features / products for sponsors and/or other parties of Hack the North?
 
-This data raw would not be useful. However, since Hack the North has a data science position, someone in that role could definitely take this data and generate insights for sponsors or other parties of Hack the North. We could promote sponsors what type of hackers come to Hack the North, deliver insights into which skills are most popular amongst students right now, and a host of other information. It'd be neat if we could accept resumes and then complete analyze on those, since they usually give a better picture of someone's skills and experiences.
+This data raw would not be very useful. However, since Hack the North has a data science position someone in that role could definitely take this data and generate insights for sponsors or other parties of Hack the North. To sponsors, we could promote what type of hackers come to Hack the North. To other parties and for Hack the North itself, we could deliver insights into which skills are most popular amongst students right now. It'd be neat if we could enable users to upload resumes and then analyze those. Resumes usually give a better picture of someone's skills and experiences.
