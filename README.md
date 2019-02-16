@@ -1,35 +1,35 @@
-# Hack the North 2019 ⚙️ - Front End Challenge
+# Hack the North 2019 - Front End Challenge  ⚙️
 
-## See The Work 👀
+## See The Work  👀
 1. `cd` into the directory
 2. `npm install`
 3. `npm start`
 4. Access at http://localhost:3000
 
-## Product Vision and Design 🔨
+## Product Vision and Design  🔨
 
 **Given Additional Time:**
 
-1. Validate that emails, locations & github profiles are entered in the correct form. I would do this by using regular expressions. Of course, savvy users could circumvent these checks on the front-end to submit invalid data, but on the server-side the backend developers should also validate data is correctly submitted. Regardless of an error on the front-end or back-end, the error should be presented to the user.
+1. Validate that emails, locations and GitHub profiles are entered correctly using regular expressions. Of course, savvy users could circumvent these checks on the front-end to submit invalid data. On the server-side, back-end developers should validate and sanitize the data. Regardless of an error on the front-end or back-end, the error should be presented to the user.
 
-2. Prompt users to save their answers before clicking "Next Set" or navigating home. I did some light user testing with my family and friends & that was a key pain point.
+2. Prompt users to save their answers if they click "Next Set" or "Home" after entering answers and saving. I did some light user testing with my family and friends and that was a key pain point.
 
-3. Prompt users with which fields were incorrectly filled out after regular expressions fail.
+3. Prompt users with which fields were incorrectly filled out after checks fail.
 
-4. The "disabled" state of the select has a black text-color. I couldn't find a cross-browser way to set the first child to grey.
+4. The "disabled" state of the select has a black text-color. I couldn't find a cross-browser way to set the first child to grey. 😡
 
-5. This front-end should sync with a back-end to support refreshing & saving of semi-completed applications.
+5. This front-end should sync with a back-end to support refreshing and saving of semi-completed applications.
 
-6. User creation & sign in
+6. User creation and sign in
 
 7. Implement [Redux](https://redux.js.org/) or [MobX](https://mobx.js.org/) - this won't scale without some state container.
 
-8. Write tests using [Jest](https://jestjs.io/) & [react-testing-library](https://github.com/kentcdodds/react-testing-library#review-weyert)
+8. Write tests using [Jest](https://jestjs.io/) and [react-testing-library](https://github.com/kentcdodds/react-testing-library#review-weyert)
 
 
 **Extra Functionality:**
 
-Extra Functionality includes changing the "Begin" text in the button to "Edit" once some changes have been made, even if the question set isn't completed.
+Extra functionality includes changing the "Begin" text in the button to "Edit" once some changes have been made, even if the question set isn't completed.
 
 **Things to Consider:**
 
@@ -43,15 +43,15 @@ Useful performance metrics include:
 
 If the average load time is high, this indicates your application isn't working as expected and probably needs refactoring. It may be fast on your machine, but not so quick on others.
 
-Time spent on entire application & each question set indicates how long people are thinking about your questions. Perhaps the questions are too hard. This leads into number of incomplete sumission; the difficulty of the questions may be leading to a reduction in the number of applications submitted. The team likely wants to strike a balance with questions -- not too hard & not too easy.
+Time spent on entire application and each question set indicates how long people are thinking about your questions. Perhaps the questions are too hard. This lends itself to number of incomplete submissions. The difficulty of the questions may lead to a reduction in the number of applications submitted. The team likely wants to strike a balance with questions -- not too hard and not too easy.
 
-Misclicks are important because this informs the designers. Are users clicking where we expected them to click? If not, we can make changes on the fly to make the UX more enjoyable.
+Misclicks are important because they inform the designers. Are users clicking where we expected them to click? If not, we can make changes on the fly to make the UX more enjoyable.
 
 > How could the api schema be extended to allow for more question types? Data validations?
 
 API schema should include a type for file attachments (resumes, GIFs, etc).
 
-Like I mentioned before, on the back-end we would need to validate and sanitize the data. There are plenty of packages on GitHub for aid the backend team here. I've used [Express Validator](https://express-validator.github.io/docs/) in the past.
+Like I mentioned before, on the back-end we would need to validate and sanitize the data. There are plenty of packages on GitHub for aid the back-end team here. I've used [Express Validator](https://express-validator.github.io/docs/) in the past.
 
 >How easy would it be to reflect the changes above in your codebase? How could you restructure/componentize your code to make this easier?
 
