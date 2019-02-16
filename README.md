@@ -12,7 +12,7 @@
 
 1. Validate that emails, locations and GitHub profiles are entered correctly using regular expressions. Of course, savvy users could circumvent these checks on the front-end to submit invalid data. On the server-side, back-end developers should validate and sanitize the data. Regardless of an error on the front-end or back-end, the error should be presented to the user.
 
-2. Prompt users to save their answers if they click "Next Set" or "Home" after entering answers and saving. I did some light user testing with my family and friends and that was a key pain point.
+2. Prompt users to save their answers if they click "Next Set" or "Home" after entering answers and not saving. I did some light user testing with my family and friends and that was a key pain point.
 
 3. Prompt users with which fields were incorrectly filled out after checks fail.
 

@@ -16,6 +16,7 @@ const BackgroundQuestions = styled.div`
     grid-template-rows: auto auto auto;
 
     @media (max-width: 1050px) {
+        height: ${props => props.set === "generalInfo" ? 'auto' : '100%'};
         grid-template-columns: auto;
         grid-template-rows: auto 84vh auto;
     }
